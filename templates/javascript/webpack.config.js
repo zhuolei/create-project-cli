@@ -9,7 +9,7 @@ module.exports = {
   },
   module: {
     rules:[{
-      test: /\.js?*/,
+      test: /\.js?$/,
       exclude: /(node_modules)/,
       loader: 'babel-loader',
     }]
@@ -22,6 +22,7 @@ module.exports = {
   // In webpack cli 4 you can use webpack serve to serve webpack-dev-server
   devServer: {
     contentBase: path.join(__dirname, './release'), //根目录
+    watchContentBase: true, // hot reload
     open: true, // 自动打开浏览器
     port: 9000,
   }
